@@ -6,8 +6,61 @@
 				Student List
 			</title>
 		</head>
+		<style>
+    .table {
+        width: 100%;
+        border: 1px solid gray;
+    }
+
+    .table td {
+        padding: 2px;
+    }
+
+
+    .table-row-1 td, .table-row-1 th {
+        background: lightgray;
+        border: 0 solid lightgray;
+    }
+
+    .table-row-2 td, .table-row-2 th, thead {
+        background: white;
+        border: 0 solid white;
+    }
+
+    .tableHeaderRow {
+        font-weight: bold;
+        border: 1px solid lightgray;
+    }
+
+    .column1 {
+        width: 15%;
+    }
+
+    .column2 {
+        width: 15%;
+    }
+	.column3{
+		width:15%
+	}
+
+	.column4 {
+		width: 15%
+	}
+
+
+</style>
+
+<style>
+    /* suppress link for printing */
+    @@media only print {
+        a {
+            display: none;
+        }
+    }
+</style>
 		<body>
-			<table>
+
+			<table class="table">
 				<thead>
 					<tr>
 						<th>Roll No</th>
@@ -21,16 +74,16 @@
 					@{
 						foreach(Student student in Model)
 						{
-						<tr>
-							<td>@student.RollNo</td>
-							<td>@student.Name</td>
-							<td>@student.Email</td>
-							<td>@student.Standard</td>
-						</tr>
+									<tr>
+										<td class="tableHeaderRow column1">@student.RollNo</td>
+										<td class="tableHeaderRow column2">@student.Name</td>
+										<td class="tableHeaderRow column3">@student.Email</td>
+										<td class="tableHeaderRow column4">@student.Standard</td>
+									</tr>
 						}
 					}
 				</tbody>
 			</table>
-			<a href="/Student/Create">Create New Registration</a>
+			<a href="/Student/Create" >Create New Registration</a>
 		</body>
 	</html>
