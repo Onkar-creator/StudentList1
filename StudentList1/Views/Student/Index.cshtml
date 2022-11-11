@@ -1,0 +1,36 @@
+﻿@model List<Student>
+
+	<html>
+		<head>
+			<title>
+				Student List
+			</title>
+		</head>
+		<body>
+			<table>
+				<thead>
+					<tr>
+						<th>Roll No</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Standard</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					@{
+						foreach(Student student in Model)
+						{
+						<tr>
+							<td>@student.RollNo</td>
+							<td>@student.Name</td>
+							<td>@student.Email</td>
+							<td>@student.Standard</td>
+						</tr>
+						}
+					}
+				</tbody>
+			</table>
+			<a href="/Student/Create">Create New Registration</a>
+		</body>
+	</html>

@@ -1,0 +1,21 @@
+﻿@model Student
+<html>
+	<head>
+		<tittle>
+			Student Registration
+			</tittle>
+			</head>
+			<body>
+				<form asp-controller="Student" asp-action="Create">
+					RollName: <input type="text" asp-for="@Model.RollNo"/>
+					<br/>
+		            Name: <input type="text" asp-for="@Model.Name"/>
+					<br/>
+		            Email: <input type="text" asp-for="@Model.Email"/>
+					<br/>
+					Standard: <input type="text" asp-for="@Model.Standard" />
+					<br />
+					<button>Submit</button>
+		</form>
+		</body>
+		</html>
