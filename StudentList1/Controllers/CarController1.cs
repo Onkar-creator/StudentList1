@@ -9,8 +9,6 @@ namespace SecondMVCApp.Controllers
         public static List<Car> Cars=new List<Car>();
 
         
-
-
         public IActionResult Index()
         {
             return View(Cars);
@@ -35,10 +33,10 @@ namespace SecondMVCApp.Controllers
 
 
 
-        public IActionResult Delete(int SrNo)
+        public IActionResult Delete(int Id)
         {
 
-            var car = Cars.FirstOrDefault(car => car.SrNo == SrNo);
+            var car = Cars.FirstOrDefault(car => car.ID == Id);
 
 
             Cars.Remove(car);
@@ -49,19 +47,25 @@ namespace SecondMVCApp.Controllers
 
 
         [HttpGet]
-        public IActionResult Update()
+        public IActionResult Update(int id)
         {
-            return View();
+            Car car = Cars.FirstOrDefault(car => car.ID == id);
+            return View(car);
         }
 
         [HttpPost]
         public IActionResult Update(Car car)
         {
-            return View();
+            Car carUpdated = Cars.FirstOrDefault(car => car.ID == car.ID);
+            carUpdated.ID=car.ID;
+            carUpdated.OwnerName = car.OwnerName;
+            carUpdated.CarName = car.CarName;
+            carUpdated.CarModelYear = car.CarModelYear;
+            carUpdated.FuelType = car.FuelType;
+            carUpdated.CarInsuranceYear = car.CarInsuranceYear;
+            return RedirectToAction("Index");
+
         }
-
-
-
 
 
     }

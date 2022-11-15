@@ -2,15 +2,15 @@
 <html>
 <head>
     <title>
-        New Car Record
+        Update Car Record
     </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
 <body>
-      <div class="container">
+    <div class="container">
 
         <div class="row">
-            <form method="post" asp-action="Create" asp-controller="Car">
+            <form method="post" asp-action="Update" asp-controller="Car">
                 <div class="col-md-6  offset-3">
 
                     <div class="form-group">
@@ -39,16 +39,20 @@
                         <label>Insurance Expiry Year</label>
                         <input type="text" asp-for="@Model.CarInsuranceYear" class="form-control" />
                     </div>
-                    
+
                     <div class="form-group">
-                        <button class="btn btn-primary">Submit</button>
+                        <button class="btn btn-primary">Update</button>
 
                     </div>
+
 
                 </div>
             </form>
         </div>
     </div>
 
+
+
 </body>
 </html>
+

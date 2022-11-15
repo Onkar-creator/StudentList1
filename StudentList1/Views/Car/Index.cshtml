@@ -12,30 +12,31 @@
 				<thead>
 					<tr>
 						
-				<td>
-					SrNo
-				</td>
+				<th>
+					Car ID
+				</th>
 
-				<td>
-					OwnerName
-				</td>
+				<th>
+					Owner Name
+				</th>
 
-				<td>
-					CarName
-				</td>
+				<th>
+					Car Name
+				</th>
 
-				<td>
-					CarModelYear
-				</td>
+				<th>
+					Car Model Year
+				</th>
 
-				<td>
-					FuelType
-				</td>
+				<th>
+					Fuel Type
+				</th>
 
-				<td>
-					CarInsuranceYear
-				</td>
-					</tr>
+				<th>
+					Car Insurance Year
+				</th>
+				
+			</tr>
 				</thead>
 
 				<tbody>
@@ -44,20 +45,20 @@
 
 				{
 					<tr>
-						<td>@car.SrNo</td>
+						<td>@car.ID</td>
 						<td>@car.OwnerName</td>
 						<td>@car.CarName</td>
 						<td>@car.CarModelYear</td>
 						<td>@car.FuelType</td>
 						<td>@car.CarInsuranceYear</td>
-						<td><a href=/Car/Delete/@car.SrNo>Delete</a></td>
-						<td><a href=/Car/Update/@car.SrNo>Update</a></td>
+						<td><a href=/Car/Delete/@car.ID onclick="return confirm('Do you want to delete this record?')">Delete</a></td>
+						<td><a href=/Car/Update/@car.ID>Update</a></td>
 					</tr>
 				}
 			}
 				
 				</tbody>
 			</table>
-	<a href="/Car/Create">Add New User</a>
+	<a href="/Car/Create">Add New Car</a>
 		</body>
 	</html>
