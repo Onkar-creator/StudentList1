@@ -1,0 +1,63 @@
+﻿@model List<Car>
+
+	<html>
+		<head>
+			<title>
+				Cars List
+			</title>
+			<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
+		</head>
+		<body>
+			<table class="table tbl-primary">
+				<thead>
+					<tr>
+						
+				<td>
+					SrNo
+				</td>
+
+				<td>
+					OwnerName
+				</td>
+
+				<td>
+					CarName
+				</td>
+
+				<td>
+					CarModelYear
+				</td>
+
+				<td>
+					FuelType
+				</td>
+
+				<td>
+					CarInsuranceYear
+				</td>
+					</tr>
+				</thead>
+
+				<tbody>
+			@{
+				foreach (Car car in Model)
+
+				{
+					<tr>
+						<td>@car.SrNo</td>
+						<td>@car.OwnerName</td>
+						<td>@car.CarName</td>
+						<td>@car.CarModelYear</td>
+						<td>@car.FuelType</td>
+						<td>@car.CarInsuranceYear</td>
+						<td><a href=/Car/Delete/@car.SrNo>Delete</a></td>
+						<td><a href=/Car/Update/@car.SrNo>Update</a></td>
+					</tr>
+				}
+			}
+				
+				</tbody>
+			</table>
+	<a href="/Car/Create">Add New User</a>
+		</body>
+	</html>
